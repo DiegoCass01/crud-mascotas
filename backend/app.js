@@ -2,6 +2,7 @@ import "dotenv/config";
 import express from "express";
 import routeMascotas from "./routes/mascotas.js";
 import bodyParser from "body-parser";
+import dbClient from "./config/dbClient.js";
 
 const app = express();
 
@@ -16,3 +17,8 @@ try {
 } catch (error) {
   console.error(e);
 }
+
+process.on('SIGNINT', async() => { 
+  dbClient.closeConnection();
+  process.exit(0);
+})
