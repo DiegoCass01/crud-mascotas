@@ -1,8 +1,8 @@
 # .gitignore en la raíz del proyecto
 
 # Node modules para backend y frontend
-back/node_modules/
-front/node_modules/
+backend/node_modules/
+frontend/node_modules/
 
 # Archivos de log
 *.log
@@ -11,15 +11,15 @@ yarn-debug.log*
 yarn-error.log*
 
 # Archivos de entorno
-back/.env
-front/.env
+backend/.env
+frontend/.env
 
-# Build del frontend
-front/build/
+# Build del frontend (React)
+frontend/build/
 
 # Salida de producción o temporal del backend (si usas dist o similar)
-back/dist/
-back/build/
+backend/dist/
+backend/build/
 
 # Cache de npm o yarn
 .backup/
@@ -31,6 +31,6 @@ back/build/
 .DS_Store
 Thumbs.db
 
-# Editor settings (opcional)
+# Configs de editores (opcional)
 .vscode/
 .idea/
