@@ -1,6 +1,8 @@
 import { ObjectId } from "mongodb";
 import dbClient from "../config/dbClient.js";
+
 class mascotasModel {
+  
   async create(mascota){
     const collectionMascotas = dbClient.db.collection('mascotas');
     return await collectionMascotas.insertOne(mascota);
