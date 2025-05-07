@@ -1,0 +1,36 @@
+# .gitignore en la raíz del proyecto
+
+# Node modules para backend y frontend
+back/node_modules/
+front/node_modules/
+
+# Archivos de log
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Archivos de entorno
+back/.env
+front/.env
+
+# Build del frontend
+front/build/
+
+# Salida de producción o temporal del backend (si usas dist o similar)
+back/dist/
+back/build/
+
+# Cache de npm o yarn
+.backup/
+.cache/
+.pnp/
+.pnp.js
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Editor settings (opcional)
+.vscode/
+.idea/
