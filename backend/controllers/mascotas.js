@@ -1,4 +1,4 @@
-import mascotasModel from '../models/mascotas.js';
+import mascotasModel from "../models/mascotas.js";
 
 class mascotasController {
   constructor() {}
