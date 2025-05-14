@@ -27,7 +27,22 @@ class usuariosController {
     }
   }
 
-  async login(req, res) {}
+  async login(req, res) {
+    const { email, clave } = req.body;
+
+    const usuarioExiste = await usuariosModel.getOne({ email });
+    if (!usuarioExiste) {
+      return res.status(400).json({ error: "El usuario no existe" });
+    }
+
+    const claveValida = await bcrypt.compare(clave, usuarioExiste.clave);
+
+    if (!claveValida) {
+      return res.status(400).json({ error: "Clave no valida" });
+    }
+
+    return res.status(200).json({ error: "Usuario autenticado" });
+  }
 }
 
 export default new usuariosController();
