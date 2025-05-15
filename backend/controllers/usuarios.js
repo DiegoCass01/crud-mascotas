@@ -46,6 +46,15 @@ class usuariosController {
 
     return res.status(200).json({ msg: "Usuario autenticado", token });
   }
+
+  async profile(req, res) {
+    try {
+      const data = await usuariosModel.getOne({ email: req.emailConectado });
+      res.status(201).json(data);
+    } catch (error) {
+      res.status(500).send(e);
+    }
+  }
 }
 
 export default new usuariosController();
